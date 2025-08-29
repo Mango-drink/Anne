@@ -18,7 +18,7 @@
   <header class="site-header">
     <div class="container nav">
       <div class="brand">
-        <img src="https://placehold.co/240x240/ceb7d5/ffffff?text=ENMyH" alt="Foto de perfil" />
+        <img src="foto/ENMyH.jpg" alt="Foto de perfil" />
         <div class="name">
           <b>Ana Gabriela Tovar Jarillo</b>
           <span>Estudiante — ENMyH · IPN</span>
@@ -26,11 +26,11 @@
       </div>
 
       <!-- Botón hamburguesa para móvil -->
-     
+
 
       <nav aria-label="principal">
         <ul id="menu">
-          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#sobre-mi">Anne</a></li>
           <li><a href="#formacion">Formación</a></li>
           <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#investigacion">Investigación</a></li>
@@ -46,8 +46,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-card" role="banner">
-        <img class="avatar" src="https://placehold.co/400x400/e7dbea/ffffff?text=Foto"
-          alt="Retrato de Ana Gabriela Tovar Jarillo" />
+        <img class="avatar" src="foto/perfil.jpeg" alt="Retrato de Ana Gabriela Tovar Jarillo" />
         <div>
           <h1>Ana Gabriela Tovar Jarillo</h1>
           <p class="lead">Estudiante de la Escuela Nacional de Medicina y Homeopatía (ENMyH) — Instituto Politécnico
@@ -56,8 +55,12 @@
             Comprometida con la excelencia académica y la ética profesional.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contacto">Contactar</a>
-            <button class="btn btn-ghost" id="btn-cv">Descargar CV (PDF)</button>
-            <a class="btn btn-ghost" href="mailto:correo@ejemplo.com">correo@ejemplo.com</a>
+            <a id="btn-cv" class="btn btn-ghost" href="assets/cv/CV_AnaGabrielaTovarJarillo.pdf" target="_blank"
+              rel="noopener" download>
+              Descargar CV
+            </a>
+
+            <a class="btn btn-ghost" href="mailto:anat88346@gmail.com">anat88346@gmail.com</a>
           </div>
         </div>
       </div>
@@ -81,9 +84,9 @@
           <h2>Datos rápidos</h2><span class="line" aria-hidden="true"></span>
         </div>
         <ul>
-          <li><b>Ciudad:</b> CDMX / Edo. Méx.</li>
-          <li><b>Correo:</b> correo@ejemplo.com</li>
-          <li><b>Idiomas:</b> Español (nativo), Inglés (B1)</li>
+          <li><b>Ciudad:</b> Edo. Méx.</li>
+          <li><b>Correo:</b> anat88346@gmail.com</li>
+          <li><b>Idiomas:</b> Español, Inglés (A1)</li>
           <li><b>Intereses:</b> Medicina interna, epidemiología, docencia</li>
         </ul>
         <div style="margin-top:10px">
@@ -104,9 +107,9 @@
         </div>
         <div class="timeline">
           <div class="tl-item">
-            <h3>Licenciatura en Médico Cirujano y Homeópata</h3>
-            <p class="meta">ENMyH — IPN · 20XX – Actualidad</p>
-            <p>Promedio actual: 9.X · Actividades: Taller de investigación, brigadas de salud comunitaria.</p>
+            <h3>Licenciatura en Médico Cirujano y Partero</h3>
+            <p class="meta">ENMyH — IPN · 2021 – Actualidad</p>
+            <p>Promedio actual: 8.7 · Actividades: Taller de investigación, brigadas de salud comunitaria.</p>
           </div>
           <div class="tl-item">
             <h3>Diplomado / Curso relevante</h3>
@@ -222,6 +225,42 @@
     </div>
   </section>
 
+
+  <!-- Galería de imágenes -->
+  <section id="galeria">
+    <div class="container">
+      <div class="card">
+        <div class="section-title">
+          <h2>Galería</h2><span class="line" aria-hidden="true"></span>
+        </div>
+
+        <!-- data-autoplay en ms (4000 = 4s) -->
+        <div class="carousel" aria-label="Galería de fotos" data-autoplay="4000">
+          <button class="c-btn c-prev" aria-label="Anterior">‹</button>
+
+          <div class="c-viewport">
+            <ul class="c-track">
+              <li class="c-slide is-active">
+                <img src="foto/ENMyH.jpg" alt="Imagen 1" loading="lazy">
+              </li>
+              <li class="c-slide">
+                <img src="foto/perfil.jpeg" alt="Imagen 2" loading="lazy">
+              </li>
+              <li class="c-slide">
+                <img src="foto/ENMyH.jpg" alt="Imagen 3" loading="lazy">
+              </li>
+            </ul>
+          </div>
+
+          <button class="c-btn c-next" aria-label="Siguiente">›</button>
+          <div class="c-dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
   <!-- Contacto -->
   <section id="contacto">
     <div class="container grid cols-2">
@@ -242,15 +281,14 @@
       <div class="card">
         <h3>Disponibilidad</h3>
         <p>Abierta a prácticas clínicas, investigación y colaboración académica.</p>
-        <p><b>Email:</b> correo@ejemplo.com</p>
-        <p><b>LinkedIn:</b> linkedin.com/in/usuario</p>
+        <p><b>Email:</b> anat88346@gmail.com</p>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <small>© <span id="year"></span> {Nombre Apellidos} — ENMyH · IPN</small>
+      <small>© <span id="year"></span> Ane Tovar — ENMyH · IPN</small>
     </div>
   </footer>
 
