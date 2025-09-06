@@ -87,7 +87,7 @@
           <li><b>Ciudad:</b> Edo. Méx.</li>
           <li><b>Correo:</b> anat88346@gmail.com</li>
           <li><b>Idiomas:</b> Español, Inglés (A1)</li>
-          <li><b>Intereses:</b> Medicina interna, epidemiología, docencia</li>
+          <li><b>Intereses:</b> Medicina interna, Genética, Ginecología</li>
         </ul>
         <div style="margin-top:10px">
           <span class="chip">Empatía</span>
@@ -112,9 +112,9 @@
             <p>Promedio actual: 8.7 · Actividades: Taller de investigación, brigadas de salud comunitaria.</p>
           </div>
           <div class="tl-item">
-            <h3>Diplomado / Curso relevante</h3>
-            <p class="meta">Soporte Vital Básico (BLS) · 20XX</p>
-            <p>Certificación en reanimación cardiopulmonar y soporte vital.</p>
+            <h3>Voluntariado</h3>
+            <p class="meta">Asociación Médica Estudiantil de Medicina Interna Politécnica (AMEMIP) · 2025</p>
+            <p>AMEMIP · Medicina Interna Politécnica</p>
           </div>
         </div>
       </div>
@@ -129,9 +129,8 @@
           <h2>Experiencia clínica</h2><span class="line" aria-hidden="true"></span>
         </div>
         <ul>
-          <li><b>Rotación en Hospital {Nombre}</b> — Área de Medicina Interna (20XX). Participación en historia clínica,
-            notas de evolución y pase de visita.</li>
-          <li><b>Brigadas médicas</b> — Toma de signos vitales, educación para la salud y derivaciones oportunas.</li>
+          <li><b>Rotación en Hospital Inguarán infantil</b> — Área de Ginecología 2025. Participación en valoración clínica de pacientes en el área de Ginecología, con actividades como toma de muestras sanguíneas y colocación de sondas vesicales tipo Foley.</li>
+          <!-- <li><b>Brigadas médicas</b> — Toma de signos vitales, educación para la salud y derivaciones oportunas.</li> -->
         </ul>
       </div>
       <div class="card">
@@ -139,8 +138,8 @@
           <h2>Voluntariado</h2><span class="line" aria-hidden="true"></span>
         </div>
         <ul>
-          <li>Campañas de vacunación locales (20XX).</li>
-          <li>Ferias de salud y talleres de prevención.</li>
+          <li>Asociación Médica Estudiantil de Medicina Interna Politécnica (AMEMIP) · 2025</li>
+          <li>9° Feria de Ciencias Morfológicas con 2 modelos donados a la escuela: Modelo anatómico del oído y modelo de las vías medulares.</li>
         </ul>
       </div>
     </div>
@@ -155,8 +154,8 @@
         </div>
         <p class="lead">Incluye aquí artículos, carteles, capítulos o proyectos en curso.</p>
         <ul>
-          <li>Poster: "Título del proyecto" — Congreso {Nombre}, 20XX.</li>
-          <li>Proyecto de investigación: "Tema" — ENMyH, 20XX.</li>
+          <!--<li>Poster: "Título del proyecto" — Congreso {Nombre}, 20XX.</li>-->
+          <li>Proyecto de investigación: "Investigación  con el título “los principales factores de riesgo que presenta la población joven de la ESCOM para padecer un EVC”" — ENMyH, 20XX.</li>
         </ul>
       </div>
     </div>
@@ -205,25 +204,33 @@
     </div>
   </section>
 
-  <!-- Portafolio (opcional) -->
-  <section id="portafolio">
-    <div class="container">
-      <div class="card">
-        <div class="section-title">
-          <h2>Portafolio</h2><span class="line" aria-hidden="true"></span>
-        </div>
-        <div class="grid cols-3">
-          <div class="card" style="padding:14px"><img src="https://placehold.co/600x400/ffffff/8a6e95?text=Congreso"
-              alt="Foto en congreso" style="width:100%; border-radius:12px" /></div>
-          <div class="card" style="padding:14px"><img
-              src="https://placehold.co/600x400/ffffff/8a6e95?text=Pr%C3%A1ctica" alt="Práctica clínica"
-              style="width:100%; border-radius:12px" /></div>
-          <div class="card" style="padding:14px"><img src="https://placehold.co/600x400/ffffff/8a6e95?text=Certificado"
-              alt="Certificado" style="width:100%; border-radius:12px" /></div>
-        </div>
-      </div>
+<!-- Portafolio (Carrusel único) -->
+<section id="portafolio" aria-label="Portafolio">
+<div class="container">
+  <div class="card">
+    <div class="section-title">
+      <h2>Portafolio</h2><span class="line" aria-hidden="true"></span>
     </div>
-  </section>
+
+    <div class="carousel" aria-label="Portafolio" data-autoplay="4000">
+      <button class="c-btn c-prev" aria-label="Anterior">‹</button>
+      <div class="c-viewport">
+        <ul class="c-track">
+          <li class="c-slide is-active"><img src="foto/Congreso.png" alt="Imagen 1" loading="lazy"></li>
+          <li class="c-slide"><img src="foto/Constancia1.png" alt="Imagen 2" loading="lazy"></li>
+          <li class="c-slide"><img src="foto/ENMyH.jpg" alt="Imagen 3" loading="lazy"></li>
+          <!-- añade más <li class="c-slide"> si quieres -->
+        </ul>
+      </div>
+      <button class="c-btn c-next" aria-label="Siguiente">›</button>
+      <div class="c-dots" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
 
 
   <!-- Galería de imágenes -->
@@ -236,7 +243,7 @@
 
         <!-- data-autoplay en ms (4000 = 4s) -->
         <div class="carousel" aria-label="Galería de fotos" data-autoplay="4000">
-          <button class="c-btn c-prev" aria-label="Anterior">‹</button>
+          <!-- <button class="c-btn c-prev" aria-label="Anterior">‹</button>-->
 
           <div class="c-viewport">
             <ul class="c-track">
@@ -252,7 +259,7 @@
             </ul>
           </div>
 
-          <button class="c-btn c-next" aria-label="Siguiente">›</button>
+          <!-- <button class="c-btn c-next" aria-label="Siguiente">›</button> -->
           <div class="c-dots" aria-hidden="true"></div>
         </div>
       </div>

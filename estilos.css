@@ -298,3 +298,58 @@ footer {
 
 /* Gestos */
 .carousel.grabbing .c-track { cursor: grabbing; }
+
+
+/*CARRUSEL PORTAFOLIO */
+/* === Carrusel Portafolio (único) === */
+.carousel { position: relative; overflow: hidden; border-radius: var(--radius); }
+.carousel-viewport { overflow: hidden; width: 100%; }
+
+/* Marco con altura estable (relación 4:3) para evitar “brincos” */
+.carousel-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;     /* ajusta a 3/2 si tus constancias son más panorámicas */
+}
+
+.carousel-track { display: flex; transition: transform .5s ease; will-change: transform; }
+.carousel-item { min-width: 10%; padding: 10px; display: grid; place-items: center; }
+
+.carousel-item img{
+  width: min(100%, 860px); /* limita ancho para que no se haga gigante */
+  height: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--borde);
+  box-shadow: var(--shadow);
+  object-fit: contain;     /* contain para respetar el documento sin recortarlo */
+  background: #fff;        /* fondo blanco por si hay transparencia */
+}
+
+/* Botones */
+.carousel-btn{
+  position: absolute; top: 50%; transform: translateY(-50%);
+  border: 0; background: rgba(0,0,0,.35); color:#fff;
+  width: 38px; height: 38px; border-radius: 999px;
+  display: grid; place-items: center; cursor: pointer; backdrop-filter: blur(4px);
+}
+.carousel-btn:hover{ background: rgba(0,0,0,.5); }
+.carousel-btn.prev{ left: 10px; }
+.carousel-btn.next{ right: 10px; }
+
+/* Dots */
+.carousel-dots{
+  position: absolute; left: 0; right: 0; bottom: 8px;
+  display: flex; gap: 8px; justify-content: center; align-items: center;
+}
+.carousel-dots button{
+  width: 8px; height: 8px; border-radius: 999px; border: 0;
+  background: rgba(0,0,0,.25); cursor: pointer;
+}
+.carousel-dots button[aria-current="true"]{ width: 18px; background: var(--lila-700); }
+
+/* Accesibilidad / rendimiento */
+@media (prefers-reduced-motion: reduce){
+  .carousel-track { transition: none; }
+}
+

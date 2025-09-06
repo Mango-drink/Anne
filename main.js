@@ -145,3 +145,77 @@ function initCarousel(root) {
   startAutoplay();
 }
 // ==================== Fin Carrusel ====================
+
+
+//CARRUSEL PORTFOLIO
+// ===== Carrusel con autoplay, teclado, swipe y pausa al hover =====
+(function initCarousels(){
+  const carousels = document.querySelectorAll('.carousel');
+  if(!carousels.length) return;
+  carousels.forEach(setup);
+
+  function setup(root){
+    const track = root.querySelector('.carousel-track');
+    const slides = Array.from(root.querySelectorAll('.carousel-item'));
+    const prevBtn = root.querySelector('.carousel-btn.prev');
+    const nextBtn = root.querySelector('.carousel-btn.next');
+    const dotsWrap = root.querySelector('.carousel-dots');
+
+    let index = 0;
+    const autoplay = root.dataset.autoplay !== 'false';
+    const interval = parseInt(root.dataset.interval || '3000',10);
+    let timer = null;
+
+    // Dots
+    slides.forEach((_,i)=>{
+      const b=document.createElement('button');
+      b.type='button';
+      b.setAttribute('aria-label',`Ir a la diapositiva ${i+1}`);
+      b.addEventListener('click',()=>goTo(i));
+      dotsWrap.appendChild(b);
+    });
+
+    function update(){
+      track.style.transform = `translateX(${-index*100}%)`;
+      dotsWrap.querySelectorAll('button').forEach((b,i)=>{
+        b.setAttribute('aria-current', i===index?'true':'false');
+      });
+    }
+    function goTo(i){ index = (i+slides.length)%slides.length; update(); restart(); }
+    function next(){ goTo(index+1); }
+    function prev(){ goTo(index-1); }
+
+    prevBtn.addEventListener('click',prev);
+    nextBtn.addEventListener('click',next);
+
+    // Teclado
+    root.setAttribute('tabindex','0');
+    root.addEventListener('keydown',e=>{
+      if(e.key==='ArrowRight') next();
+      if(e.key==='ArrowLeft') prev();
+    });
+
+    // Swipe táctil
+    let startX=null;
+    root.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+    root.addEventListener('touchmove',e=>{
+      if(startX===null) return;
+      const dx=e.touches[0].clientX-startX;
+      if(Math.abs(dx)>50){ dx<0?next():prev(); startX=null; }
+    },{passive:true});
+    root.addEventListener('touchend',()=>startX=null);
+
+    // Autoplay + pausa
+    function start(){ if(!autoplay) return; stop(); timer=setInterval(next, interval); }
+    function stop(){ if(timer) clearInterval(timer); timer=null; }
+    function restart(){ if(!autoplay) return; stop(); start(); }
+
+    root.addEventListener('mouseenter',stop);
+    root.addEventListener('mouseleave',start);
+    root.addEventListener('focusin',stop);
+    root.addEventListener('focusout',start);
+
+    update(); start();
+  }
+})();
+// ===== Fin Carrusel =====
